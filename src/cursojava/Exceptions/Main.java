@@ -23,8 +23,7 @@ public class Main {
             int s[] = {1, 2, 3};
             System.out.println(s[3]);
         } catch (Exception e) {
-            System.out.println("Tem algum erro");
-            e.printStackTrace();
+            System.out.println("Tem algum erro do tipo ");
         }
 
 // O try and catch block funciona como se fosse um if e else
