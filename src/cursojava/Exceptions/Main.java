@@ -1,12 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package cursojava.Exceptions;
 
 /**
  *
- * @author Latitude 5500
+ * @author Hidelgio Novela
  */
 public class Main {
 
@@ -23,7 +20,7 @@ public class Main {
             int s[] = {1, 2, 3};
             System.out.println(s[3]);
         } catch (Exception e) {
-            System.out.println("Tem algum erro do tipo ");
+            System.out.println("Tem algum erro 1");
         }
 
 // O try and catch block funciona como se fosse um if e else
@@ -33,9 +30,47 @@ public class Main {
         try {
             int a = 5 / 0;
         } catch (Exception e) {
-            System.out.println("Teu um erro");
-            e.printStackTrace();
+            System.out.println("Teu um erro 2");
+//            e.printStackTrace();
         }
+
+        //  No bloco Catch entre parentese podemos escrever a subclasse especifica do exception
+//    ex3:
+        try {
+            int a = 5 / 0;
+        } catch (ArithmeticException e) {
+            System.out.println("Teu um erro 3");
+//            e.printStackTrace();
+        }
+
+// Mas quando colocamos a subClasse errada teremos um bug
+//Por EX: em vez de ArithmeticException colocar IndexOutOfBoundsException
+// Podemos ter tambem multiplos catch's  
+//Ex4:
+        try {
+            int a = 5 / 0; // ArithmeticException
+            String b = null;
+            b.toUpperCase(); // NullPointerException
+            int c[] = {1,2,3};
+            System.out.println(c[3]); // IndexOutOfBoundsException
+        } catch (ArithmeticException e) {
+            System.out.println("Teu um erro Aritimetico");
+//            e.printStackTrace();
+        } catch (NullPointerException e) {
+            System.out.println("Teu um erro do tipo Null");
+//            e.printStackTrace();
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println("Teu um erro do tipo indexout");
+//            e.printStackTrace();
+        }
+        
+        System.out.println("Resto do codigo abaixo de try, catch");
+        
+//        Como o bloco try and catch funciona como um if else quando detecta um erro nao executa os restantes blocos catch
+//          A ordem dos erros deve estar em sintonia com os blocos catch
+//      Por isso para simplificar ee melhor usar um unico bloco catch e camar a super classe Exception para tratar qualquer tipo de Execcao
+//      Mas executa o resto do codigo que teremos em baixo do bloco try catch
+
     }
 
 }
