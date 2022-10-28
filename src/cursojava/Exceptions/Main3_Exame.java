@@ -9,7 +9,7 @@ public class Main3_Exame {
     
     public static void main(String[] args) {
         try {
-              ExameController.NomeExame("null");
+              ExameController.NomeExame(null);
         } catch (Exception e) {
             System.out.println("Nome nao pode ser nullo");
         }
